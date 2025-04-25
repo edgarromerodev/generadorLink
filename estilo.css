@@ -10,15 +10,18 @@ body {
 
 .main-container {
   display: flex;
+  flex-direction: column;
   max-width: 1000px;
   width: 100%;
   gap: 30px;
+  align-items: center;
 }
 
 .divider {
   width: 1px;
   background-color: #ddd;
   margin: 0 15px;
+  display: none;
 }
 
 .container {
@@ -41,7 +44,20 @@ body {
   align-items: center;
   border: 10px solid #111;
   position: relative;
+  order: -1;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    padding: 15px;
+ 
 }
+
+
+.container, .phone-simulator {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
 
 .phone-notch {
   width: 50%;
@@ -222,4 +238,83 @@ button {
   text-align: center;
   font-style: italic;
   margin: 20px 0;
+}
+
+
+ 
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .divider {
+        display: block;
+        width: 1px;
+        background-color: #ddd;
+        margin: 0 10px;
+    }
+    
+    .phone-simulator {
+        order: 1;
+        max-width: 300px;
+        margin-bottom: 0;
+    }
+    
+    .container {
+        flex: 2;
+    }
+}
+
+ 
+@media (min-width: 992px) {
+    .main-container {
+        gap: 30px;
+    }
+    
+    .phone-simulator {
+        max-width: 350px;
+        border-radius: 30px;
+        padding: 20px;
+        border: 10px solid #111;
+    }
+    
+    .divider {
+        margin: 0 15px;
+    }
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .phone-simulator {
+        border-width: 5px;
+        border-radius: 15px;
+        padding: 10px;
+    }
+    
+    .phone-title {
+        font-size: 1.2rem;
+    }
+    
+    .generate-btn, .copy-btn, .download-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Ajustes para el QR en móviles */
+@media (max-width: 767px) {
+    .qr-container {
+        width: 180px;
+        height: 180px;
+    }
+    
+    #qr-container canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
 }
