@@ -1,0 +1,225 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  gap: 30px;
+}
+
+.divider {
+  width: 1px;
+  background-color: #ddd;
+  margin: 0 15px;
+}
+
+.container {
+  flex: 1;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.phone-simulator {
+  flex: 1;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 10px solid #111;
+  position: relative;
+}
+
+.phone-notch {
+  width: 50%;
+  height: 20px;
+  background-color: #111;
+  position: absolute;
+  top: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-container {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #075e54;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.country-select, input[type="tel"], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s;
+  box-sizing: border-box;
+}
+
+.country-select:focus, input[type="tel"]:focus, textarea:focus {
+  border-color: #25d366;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+}
+
+.phone-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-flag {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f8f8;
+}
+
+.flag-icon {
+  font-size: 20px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.generate-btn {
+  width: 100%;
+  background-color: #25d366;
+  color: white;
+}
+
+.generate-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.generate-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.output {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.output input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f8f8f8;
+}
+
+.copy-btn, .download-btn {
+  background-color: #075e54;
+  color: white;
+  min-width: 100px;
+}
+
+.copy-btn:hover, .download-btn:hover {
+  background-color: #064e46;
+}
+
+.copy-btn:disabled, .download-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.fa-whatsapp {
+  color: #25d366;
+}
+
+.fa-copy, .fa-download {
+  font-size: 16px;
+}
+
+.phone-title {
+  color: #075e54;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.no-qr-message {
+  color: #666;
+  text-align: center;
+  font-style: italic;
+  margin: 20px 0;
+}
