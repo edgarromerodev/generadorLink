@@ -136,21 +136,35 @@ function generateQRCode(url) {
       height: 200,
       colorDark: "#000000",
       colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H
+      correctLevel: QRCode.CorrectLevel.H,
+      margin: 2
+      
   });
   
   // Habilitar botón de descarga
   downloadBtn.disabled = false;
 }
 
+
 // Descargar QR
 downloadBtn.addEventListener('click', function() {
   const canvas = qrContainer.querySelector('canvas');
   if (!canvas) return;
   
+  // Crear un nuevo canvas con margen blanco
+  const paddedCanvas = document.createElement('canvas');
+  const padding = 20; // píxeles de margen blanco
+  paddedCanvas.width = canvas.width + padding * 2;
+  paddedCanvas.height = canvas.height + padding * 2;
+  
+  const ctx = paddedCanvas.getContext('2d');
+  ctx.fillStyle = '#ffffff'; // fondo blanco
+  ctx.fillRect(0, 0, paddedCanvas.width, paddedCanvas.height);
+  ctx.drawImage(canvas, padding, padding);
+  
   const link = document.createElement('a');
   link.download = 'whatsapp-qr.png';
-  link.href = canvas.toDataURL('image/png');
+  link.href = paddedCanvas.toDataURL('image/png');
   link.click();
 });
 
